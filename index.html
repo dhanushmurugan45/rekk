@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Bestie 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Page 1 -->
+  <div class="screen show" id="screen1">
+    <img src="cat2.jpeg" alt="First Image">
+    <div class="overlay">
+    </div>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="screen" id="screen2">
+    <img src="cat3.jpeg" alt="Second Image">
+    <div class="overlay">
+    </div>
+  </div>
+
+</div>
+
+<script>
+let switched = false;
+
+function goNext() {
+  if (switched) return;
+  switched = true;
+
+  document.getElementById("screen1").classList.remove("show");
+  document.getElementById("screen2").classList.add("show");
+}
+
+// Auto after 5 sec
+setTimeout(goNext, 5000);
+
+// Tap anywhere
+document.body.addEventListener("click", goNext);
+</script>
+
+</body>
+</html>
